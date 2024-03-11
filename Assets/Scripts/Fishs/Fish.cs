@@ -1,5 +1,5 @@
-﻿using Game;
-using Game.Health;
+﻿using Game.Health;
+using Game.Paths;
 using UnityEngine;
 
 namespace Game.Fishs {

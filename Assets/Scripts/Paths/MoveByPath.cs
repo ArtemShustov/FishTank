@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Game {
+namespace Game.Paths {
 	public class MoveByPath: MonoBehaviour {
 		[SerializeField] private float _speed = 1f;
 		[SerializeField] private Vector2[] _points = new Vector2[0];

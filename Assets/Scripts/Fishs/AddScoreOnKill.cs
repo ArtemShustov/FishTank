@@ -1,7 +1,7 @@
-﻿using Game.Fishs;
+﻿using Game.Stats;
 using UnityEngine;
 
-namespace Game.Stats {
+namespace Game.Fishs {
 	public class AddScoreOnKill: MonoBehaviour {
 		[SerializeField] private ScoreCounter _counter;
 		[SerializeField] private FishSpawner[] _spawners;

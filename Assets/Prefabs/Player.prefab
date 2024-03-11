@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7927902084586791793}
   - component: {fileID: 4553036923280435476}
   m_Layer: 6
-  m_Name: tank_0
+  m_Name: tank_bottom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -95,7 +95,7 @@ GameObject:
   - component: {fileID: 5927001286968680097}
   - component: {fileID: 7859708856503716029}
   m_Layer: 6
-  m_Name: tank_1
+  m_Name: tank_head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 7271437063499388032}
   - component: {fileID: 3509028727258361612}
   m_Layer: 6
-  m_Name: Gun
+  m_Name: GunSprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -198,6 +198,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4718417968912170907}
+  - {fileID: 4415916885243876417}
   m_Father: {fileID: 2412146124693784936}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -265,7 +266,7 @@ GameObject:
   - component: {fileID: 3365830546973879599}
   - component: {fileID: 7294031438887504305}
   m_Layer: 6
-  m_Name: Particles (1)
+  m_Name: Particles
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -279,11 +280,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3128039612058378559}
   m_LocalRotation: {x: -0, y: 0.70710707, z: -0, w: 0.70710653}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.33200002, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 4718417968912170907}
+  m_Father: {fileID: 7271437063499388032}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
 --- !u!198 &3365830546973879599
@@ -5093,7 +5094,7 @@ GameObject:
   - component: {fileID: 8909532422856924673}
   - component: {fileID: 377518013269254255}
   m_Layer: 6
-  m_Name: Engine
+  m_Name: LeftEngine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5239,7 +5240,7 @@ GameObject:
   - component: {fileID: 6107247462775654304}
   - component: {fileID: 7578747154404019043}
   m_Layer: 6
-  m_Name: Engine2
+  m_Name: RightEngine
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5400,8 +5401,7 @@ Transform:
   m_LocalPosition: {x: 0.332, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 4415916885243876417}
+  m_Children: []
   m_Father: {fileID: 7271437063499388032}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -5491,7 +5491,7 @@ Transform:
   - {fileID: 139890584205479635}
   - {fileID: 8734705664009988084}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5718260415203462085
 MonoBehaviour:
@@ -5505,10 +5505,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a5775153ba8b4b54ca737ec7c7c7eabd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _aimTarget: {fileID: 0}
   _shooter: {fileID: 7006635288150754381}
   _leftEngine: {fileID: 8909532422856924673}
   _rightEngine: {fileID: 6107247462775654304}
-  _gunMovement: {fileID: 5238001554626112236}
+  _gunMovement: {fileID: 0}
 --- !u!114 &3202928267884487278
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5521,7 +5522,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fd45ca821201a4e87334194681b82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxValue: 100
+  <MaxValue>k__BackingField: 100
 --- !u!114 &6982703543204716004
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10459,7 +10460,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1802026113278021431}
-  - component: {fileID: 5238001554626112236}
   m_Layer: 6
   m_Name: GunMount
   m_TagString: Untagged
@@ -10483,22 +10483,6 @@ Transform:
   m_Father: {fileID: 678092597617164416}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5238001554626112236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6259057923973716755}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a23753b27d732d41b8b23cac7b652b6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationSpeed: 0
-  _minAngle: -25
-  _maxAngle: 45
-  _gun: {fileID: 2412146124693784936}
 --- !u!1 &7852601944645981482
 GameObject:
   m_ObjectHideFlags: 0

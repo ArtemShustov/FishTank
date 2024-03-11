@@ -62,7 +62,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1949278118573806549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b9f43ea7407a3a458bd78d5f980d712, type: 3}
+  m_Script: {fileID: 11500000, guid: 12c8dec4ff089664b8d86939c5cc13a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 1
@@ -80,7 +80,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25fd45ca821201a4e87334194681b82b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _maxValue: 5
+  <MaxValue>k__BackingField: 5
 --- !u!114 &3043756640860109049
 MonoBehaviour:
   m_ObjectHideFlags: 0

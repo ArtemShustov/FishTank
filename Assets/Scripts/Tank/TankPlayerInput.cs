@@ -2,12 +2,10 @@
 using UnityEngine;
 
 namespace Game.TankSystem {
-	public class Tank: MonoBehaviour {
-		[SerializeField] private Transform _aimTarget;
+	public class TankPlayerInput: MonoBehaviour {
 		[SerializeField] private Shooter _shooter;
 		[SerializeField] private Engine _leftEngine;
 		[SerializeField] private Engine _rightEngine;
-		[SerializeField] private GunMovement _gunMovement;
 
 		private PlayerInput _playerInput;
 
@@ -18,10 +16,6 @@ namespace Game.TankSystem {
 			_playerInput.Tank.LeftEngine.canceled += ToggleLeftOff;
 			_playerInput.Tank.RightEngine.started += ToggleRightOn;
 			_playerInput.Tank.RightEngine.canceled += ToggleRightOff;
-		}
-
-		private void Update() {
-			_gunMovement.SetTarget(_aimTarget.position);
 		}
 
 		private void ToggleLeftOn(UnityEngine.InputSystem.InputAction.CallbackContext obj) {

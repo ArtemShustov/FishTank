@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace Game {
+namespace Game.Paths {
 	public class PathBuilder: MonoBehaviour {
 		[SerializeField] private Color _color;
 

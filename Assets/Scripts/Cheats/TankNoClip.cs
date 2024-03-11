@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
 namespace Game.Cheats {
-	public class NoClip: MonoBehaviour {
+	public class TankNoClip: MonoBehaviour {
 #if DEBUG || UNITY_EDITOR || IWANTCHEATS
 		[SerializeField] private float _speed = 2f;
 		[SerializeField] private Rigidbody2D _rigidbody;

@@ -1,5 +1,6 @@
 ﻿using Game.FX;
 using Game.Health;
+using Game.Utils;
 using UnityEngine;
 
 namespace Game.TankSystem {
@@ -8,7 +9,7 @@ namespace Game.TankSystem {
 		[SerializeField] private float _explosionForce = 10;
 		[SerializeField] private int _baseDamage = 10;
 		[SerializeField] private Rigidbody2D _rigidbody;
-		[SerializeField] private LifeTimer _trailParticles;
+		[SerializeField] private DestroyAfterTime _trailParticles;
 		[SerializeField] private Explosion _explosionPrefab;
 
 		public void AddImpulseForce(float force) {

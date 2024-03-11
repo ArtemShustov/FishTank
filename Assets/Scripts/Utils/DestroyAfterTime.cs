@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 
-namespace Game {
-	public class LifeTimer: MonoBehaviour {
+namespace Game.Utils {
+	public class DestroyAfterTime: MonoBehaviour {
 		[Min(0)]
 		[SerializeField] private float _time = 1;
 

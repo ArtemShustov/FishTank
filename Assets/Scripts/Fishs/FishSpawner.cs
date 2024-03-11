@@ -1,20 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Game.Paths;
+using System;
+using System.Collections;
 using UnityEngine;
 
 namespace Game.Fishs {
 	public class FishSpawner: MonoBehaviour {
 		[SerializeField] private float _spawnCooldown = 10;
-		[SerializeField] private int _maxSpawned = 10;
+		[SerializeField] private int _maxCanSpawned = 10;
 		[SerializeField] private Fish[] _fishPrefab;
 		[SerializeField] private PathBuilder _path;
 		private int _spawnedCount = 0;
 
 		public event Action FishKilled;
-
-		private void Start() {
-			SpawnFish();
-		}
 
 		public void SpawnFish() {
 			var prefab = GetRandomPrefab();
@@ -23,7 +20,20 @@ namespace Game.Fishs {
 			instance.SetPath(_path.GetPath());
 			instance.GetHealth().RunOut += OnFishDie;
 			_spawnedCount += 1;
-			Invoke(nameof(SpawnFish), _spawnCooldown);
+		}
+		private Fish GetRandomPrefab() {
+			return _fishPrefab[UnityEngine.Random.Range(0, _fishPrefab.Length)];
+		}
+
+		private IEnumerator SpawnLoop() {
+			while (true) {
+				if (_spawnedCount < _maxCanSpawned) {
+					SpawnFish();
+					yield return new WaitForSeconds(_spawnCooldown);
+				} else {
+					yield return new WaitForEndOfFrame();
+				}
+			}
 		}
 
 		private void OnFishDie() {
@@ -31,8 +41,11 @@ namespace Game.Fishs {
 			FishKilled?.Invoke();
 		}
 
-		private Fish GetRandomPrefab() {
-			return _fishPrefab[UnityEngine.Random.Range(0, _fishPrefab.Length)];
+		private void OnEnable() {
+			StartCoroutine(SpawnLoop());
+		}
+		private void OnDisable() {
+			StopCoroutine(SpawnLoop());
 		}
 	}
 }

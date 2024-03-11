@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-namespace Game.UI {
+namespace Game.Utils {
 	public class InvokeAfterTime: MonoBehaviour {
 		[Min(1)]
 		[SerializeField] private float _time = 1;

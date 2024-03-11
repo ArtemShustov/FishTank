@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Game.UI {
+namespace Game.Utils {
 	public class InvokeOnDie: MonoBehaviour {
 		[SerializeField] private HealthProperty _health;
 		[SerializeField] private UnityEvent _onDie;
